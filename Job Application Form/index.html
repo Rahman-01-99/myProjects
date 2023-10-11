@@ -1,0 +1,122 @@
+<!doctype html>
+<head>
+<title>Registration Form</title>
+<link rel="Stylesheet" href="Jobapp.css">
+<script src="form.js" defer></script>
+</head>
+<body>
+<h2>JOB APPLICATION FORM </h2>
+<form onsubmit="return valid()">
+<table align="center">
+<tr>
+<th><label for ="name">NAME :</label></th>
+<td><input type="text"  placeholder="First Name" id="firstname">
+    <span id="erbox1"></span>
+<input type="text" placeholder="Middle name">
+<input type="text"  placeholder="Last name" id="lastname">
+     <span id="erbox2"></span>
+</td></tr>
+
+<tr>
+<th><label for ="Father name">FATHER'S NAME :</label></th>
+<td><input type="text"  placeholder="First Name" id="ffname">
+    <span id="erbox3"></span>
+<input type="text" placeholder="Middle name">
+<input type="text"  placeholder="Last name" id="flname">
+    <span id="erbox4"></span>
+</td></tr>
+
+<tr>
+<th><label for ="email">EMAIL ID :</th>
+<td><input type="email"  id="email"></td></tr>
+<tr>
+<th><label for ="number">MOBILE NUMBER :</th>
+<td><input class="num" type="text" readonly value="+91" diasbled>
+<input type="text" class="numb"  maxlength="10" id="mobno"></td></tr>
+
+<tr>
+<th><label for ="name">ADDRESS :</label></th>
+<td><input type="text"  placeholder="Line 1" id="address">
+<input type="text" placeholder="Line 2">
+<input type="text"  placeholder="Line 3"></td></tr>
+
+<tr>
+<th><label for ="gender">GENDER :</label></th>
+<td><input class="gen" type="radio" name="gender">Female
+<input class="gen" type="radio" name="gender">Male
+<input class="gen" type="radio" name="gender">Other</td></tr>
+
+
+<tr>
+<th><label for ="dob">DATE OF BIRTH :</label></th>
+<td><input type="date"></td></tr>
+
+<tr>
+<th><label for ="name">NATIONALITY :</label></th>
+<td><select class="form-select" id="country" name="country">
+    <option>Select Country</option>
+	 <option value="AL">Australia</option>
+    <option value="AF">Canada</option>
+    <option value="AX">China</option>
+    <option value="AL">France</option>
+    <option value="DZ">India</option>
+    <option value="AS">Italy</option>
+    <option value="AD">Japan</option>
+    <option value="AO">Russia</option>
+    <option value="BS">Sweden</option>
+    <option value="BH">United Kingdom </option>
+    <option value="BD">United States of America</option>
+</select></td></tr>
+
+<tr>
+<th><label for ="Qualification">QUALIFICATION :</label></th>
+<td><select id="deg" name="Degree">
+<option selected>Degree</option>
+<option select>B.E</option>
+<option select>B.Tech</option>
+<option select>B.Sc</option>
+<option select>M.Tech</option>
+<option select>M.Sc</option>
+</select>
+<input type="text"  placeholder="College Name">
+<input type="text" placeholder="Stream">
+<input class="num" type="text"  placeholder="CGPA">
+YOP:
+<input type="month"><br><br>
+<select id="deg" name="Intermediate">
+<option selected>Intermediate</option>
+<option select>HSC</option>
+<option select>Diploma</option>
+<option select>ITI</option>
+</select>
+<input type="text"  placeholder="School Name">
+<input type="text" placeholder="Stream">
+<input class="num" type="text"  placeholder="CGPA">
+YOP :
+<input type="month">
+</td></tr>
+
+
+<tr>
+<th><label for ="skills">SKILLS :</label></th>
+<td><input type="text"></td></tr>
+
+<tr>
+<th><label for ="id">LINKEDIN ID:</label></th>
+<td><input type="url" placeholder="Linkedin Url"></td></tr>
+
+<tr>
+<th><label for ="resume">RESUME:</label></th>
+<td><input type="File" id="resume"></td></tr>
+</table>
+<br>
+<div class="button-center">
+<button type="reset" value="">RESET</button>
+<button type="submit" value="">SUBMIT FORM</button>
+</div>
+</form>
+</body>
+</html>
+
+
+
