@@ -1,0 +1,29 @@
+<p>users-list works!</p>
+<div class="container">
+    <button class="btn btn-primary mt-5" routerLink="/add">Add User's</button> <h2 class="text-center mb-3">User's List</h2>
+    <table class="table table-bordered">
+    <thead>
+    <tr>
+    <th>#ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Actions</th>
+    </tr>
+    </thead>
+   <tbody>
+    <tr *ngFor="let u of Users">
+    <td>{{u.id}}</td>
+    <td>{{u.name}}</td>
+    <td>{{u.email}}</td>
+    <td>{{u.phone}}</td>
+    <td>
+    <span class="btn btn-info btn-sm"
+   routerLink="/edit/{{u.id}}">Edit</span> &nbsp;
+    <span class="btn btn-danger btn-sm"
+   (click)="delete(u.id)">Delete</span>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+   </div>

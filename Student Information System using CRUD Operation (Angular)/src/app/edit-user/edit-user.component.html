@@ -1,0 +1,21 @@
+<p>edit-user works!</p>
+<div class="container" style="max-width:500px;">
+ <h3 class="text-center mt-5 mb-3">Edit User</h3>
+
+ <div>
+ <input type="text" value="{{Users.name}}" placeholder="Name" class="form-control" [(ngModel)]="Users.name">
+ </div>
+<div>
+ <input type="text" value="{{Users.email}}" placeholder="Email" class="form-control" [(ngModel)]="Users.email">
+ </div>
+<div>
+ <input type="text" value="{{Users.phone}}" placeholder="Phone" class="form-control" [(ngModel)]="Users.phone">
+ </div>
+<div>
+ <button class="btn btn-primary"
+(click)="updateUser(Users.id,Users)">Update</button> &nbsp;
+ <button class="btn btn-info" routerLink="/list">User's
+List</button>
+ </div>
+
+</div>

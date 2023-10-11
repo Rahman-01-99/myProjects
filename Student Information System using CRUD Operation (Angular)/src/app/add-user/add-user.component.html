@@ -1,0 +1,23 @@
+<p>add-user works!</p>
+<div class="container" style="max-width:500px;">
+ <h3 class="text-center mt-5 mb-3">Add User</h3>
+
+ <div>
+ <input type="text" value="{{userobj.name}}" placeholder="Name"class="form-control"
+ [(ngModel)]="userobj.name">
+ </div>
+<div>
+ <input type="text" value="{{userobj.email}}" placeholder="Email"class="form-control"
+ [(ngModel)]="userobj.email">
+ </div>
+<div>
+ <input type="text" value="{{userobj.phone}}" placeholder="Phone"class="form-control"
+ [(ngModel)]="userobj.phone">
+ </div>
+<div>
+ <button class="btn btn-primary" (click)="storedata(userobj)">Add User</button> &nbsp;
+ <button class="btn btn-info" routerLink="/list">User's
+List</button>
+ </div>
+
+</div>
