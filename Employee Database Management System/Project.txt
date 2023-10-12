@@ -1,0 +1,153 @@
+package ApplicantTrackingSystem;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DBcode {
+
+	private Connection con;
+	// Server Details 
+	String url = "jdbc:mysql://localhost:3306/aim";
+	String user = "root";
+	String pass = "";
+
+	public DBcode() {
+		try {
+			con = DriverManager.getConnection(url, user, pass);
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
+
+	public int insert(int eid, String Name, String Department, float Salary) {
+		int r = 0;
+		try {
+			String q = "INSERT INTO emp(eid, Name, Department, Salary) VALUES (?, ?, ?, ?)";
+			PreparedStatement pst = con.prepareStatement(q);
+			pst.setInt(1, eid);
+			pst.setString(2, Name);
+			pst.setString(3, Department);
+			pst.setFloat(4, Salary);
+			r = pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return r;
+	}
+
+	public void select() {
+		try {
+			String q = "SELECT * FROM emp";
+			PreparedStatement pst = con.prepareStatement(q);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				int sid = rs.getInt("eid");
+				String sname = rs.getString("Name");
+				String sdept = rs.getString("Department");
+				float smark = rs.getFloat("Salary");
+				System.out.println(sid + " " + sname + " " + sdept + " " + smark + " ");
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
+
+	public int update(int eid, float Salary) {
+		int r = 0;
+		try {
+			String q = "UPDATE emp SET Salary = ? WHERE eid = ?";
+			PreparedStatement pst = con.prepareStatement(q);
+			pst.setFloat(1, Salary);
+			pst.setInt(2, eid);
+			r = pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return r;
+	}
+
+	public int delete(int eid) {
+		int r = 0;
+		try {
+			String q = "DELETE FROM emp WHERE eid = ?";
+			PreparedStatement pst = con.prepareStatement(q);
+			pst.setInt(1, eid);
+			r = pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return r;
+	}
+}
+
+
+*********************************************************************************************************************
+
+
+package ApplicantTrackingSystem;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {		
+		DBcode db = new DBcode();
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("Press 1 to Register");
+			System.out.println("Press 2 to View the Records");
+			System.out.println("Press 3 to Edit");
+			System.out.println("Press 4 to Remove");
+			System.out.println("Press 0 to Exit");
+			System.out.print("Enter Your Choice: ");
+			int ch = sc.nextInt();	
+			sc.nextLine();
+			
+			if (ch == 1) {
+				System.out.print("Enter the Id: ");
+				int id = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Enter the Name: ");
+				String name = sc.nextLine();
+				System.out.print("Enter the Department: ");
+				String dept = sc.nextLine();
+				System.out.print("Enter the Salary: ");
+				float sal = sc.nextFloat();
+				
+				int res = db.insert(id, name, dept, sal);
+				System.out.println((res > 0) ? "Registered" : "Not Registered");			
+			} else if (ch == 2) {
+				db.select();	
+				System.out.println("End of the Records!!!");
+			} else if (ch == 3) {
+				System.out.print("Enter the Employee ID: ");
+				int id = sc.nextInt();
+				System.out.print("Enter the Employee Salary to be Updated: ");
+				float sal = sc.nextFloat();
+				int res = db.update(id, sal);
+				System.out.println((res > 0) ? "Updated" : "Not Updated");
+			} else if (ch == 4) {
+				System.out.print("Enter the Employee ID: ");
+				int id = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Press Y to Confirm or N to Abort: ");
+				char r = sc.next().charAt(0);
+				if (r == 'Y' || r == 'y') {	
+					int res = db.delete(id);
+					System.out.println((res > 0) ? "Deleted" : "Not Deleted");
+				} else {
+					System.out.println("Operation Terminated!!!");
+				}
+			} else if (ch == 0) {
+				System.out.println("----Application Terminated----");
+				break;
+			} else {
+				System.out.println("Invalid Operation!!");
+			} 
+		}
+		sc.close();
+	}
+}
