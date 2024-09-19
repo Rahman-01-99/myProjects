@@ -1,0 +1,7 @@
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\bin\Debug\CRUDOpsUsingConsoleApp.exe.config
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\bin\Debug\CRUDOpsUsingConsoleApp.exe
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\bin\Debug\CRUDOpsUsingConsoleApp.pdb
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\obj\Debug\CRUDOpsUsingConsoleApp.csproj.AssemblyReference.cache
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\obj\Debug\CRUDOpsUsingConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\obj\Debug\CRUDOpsUsingConsoleApp.exe
+C:\Users\kshab\source\repos\CRUDOpsUsingConsoleApp\CRUDOpsUsingConsoleApp\obj\Debug\CRUDOpsUsingConsoleApp.pdb
